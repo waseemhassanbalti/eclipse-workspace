@@ -1,0 +1,9 @@
+/**
+ * 
+ */
+/**
+ * @author wasee
+ *
+ */
+module JavaBootCamp {
+}
