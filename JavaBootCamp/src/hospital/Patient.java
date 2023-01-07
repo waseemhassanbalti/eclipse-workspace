@@ -29,20 +29,22 @@ public class Patient {
 		List<Patient> patients = new ArrayList<>();
 		Scanner scan = new Scanner(System.in);
 		if(patientList.size()<2) {
-			for(int i = 0; i<2 ; i++) {
-
-				System.out.println("Patient "+ (i+1));
-				System.out.print("Enter Name : ");
-				String pName = scan.nextLine();
-				System.out.print("Enter Age : ");
-				int pAge = scan.nextInt();
-				System.out.print("Enter Occupation : ");
-				String pOccupation = scan.nextLine();
-				patients.add(new Patient(pName, pAge, pOccupation));
+			try {
+				for(int i = 0; i<2 ; i++) {
+					
+					System.out.println("\nPatient "+ (i+1));
+					System.out.print("Enter Name : ");
+					String pName = scan.nextLine();
+					System.out.print("Enter Age : ");
+					int pAge = Integer.parseInt(scan.nextLine());
+					System.out.print("Enter Occupation : ");
+					String pOccupation = scan.nextLine();
+					patients.add(new Patient(pName, pAge, pOccupation));
+					
+				}
+			}catch(Exception ex) {
+				System.out.println("Invalid input");
 			}
-			System.out.println("All Patient Added Successfully");
-		}else {
-			System.out.println("Patient Capacity filled");
 		}
 		scan.close();
 		return patients;
@@ -59,14 +61,15 @@ public class Patient {
 		return patientList;
 	}
 	
-	public void displayPatients(List<Patient> patients) {
-		for(Patient patient : patients ) {
-			System.out.println(patient.toString());
+	public void displayPatients() {
+		int count = 1;
+		for(Patient patient : patientList ) {
+			System.out.println("Patient "+(count++)+" "+patient.toString());
 		}
 	}
 
 	@Override
 	public String toString() {
-		return "Name : "+this.name+"\n"+"Age : "+this.age+"\n"+"Occupation : "+this.occupation+"\n";
+		return "Name : "+this.name+" Age : "+this.age+" Occupation : "+this.occupation+"";
 	}
 }
