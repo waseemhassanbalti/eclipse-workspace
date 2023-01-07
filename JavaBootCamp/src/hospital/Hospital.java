@@ -1,9 +1,8 @@
 package hospital;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Scanner;
+
 
 enum Depart {
 	_OPD(OPD.getInstance(),1),
@@ -13,7 +12,7 @@ enum Depart {
 	
 	private  Department dept;
 	private int val;
-	private static Map<Integer,Depart> deptMap = new HashMap<Integer, Depart>();
+	
 	Depart(Department d, int v){
 		dept = d;
 		val = v;
@@ -26,6 +25,7 @@ enum Depart {
 		return val;
 	}
 	
+	
 	public static Department valueOf(int value) {
 		for(Depart d: Depart.values()) {
 			if(d.getval() == value) {
@@ -36,7 +36,10 @@ enum Depart {
 	}
 }
 
+
 public class Hospital {
+
+	
 	
 	public static void takeInput(Department department) {
 		List<Patient> patientList = department.patient.addPatients();
@@ -66,31 +69,32 @@ public class Hospital {
 				
 				input = scan.nextInt();
 				
+				 Department d = Depart._OPD.getDetp();
 				
 				Department opd = Depart.valueOf(input);//  DepartmentFactory.getDepartmentInstance("OPD");
 				Hospital.takeInput(opd);
 //				isContinue = true;
 				
 //				if(input == 1) {
-//					Department opd = Depart._OPD.getDetp();//  DepartmentFactory.getDepartmentInstance("OPD");
+//					Department opd =  DepartmentFactory.getDepartmentInstance("OPD");
 //					Hospital.takeInput(opd);
 //					isContinue = true;
 //				}else if(input == 2) {
-//					Department opd = Depart._Emergency.getDetp();//DepartmentFactory.getDepartmentInstance("Emergency");
+//					Department opd = DepartmentFactory.getDepartmentInstance("Emergency");
 //					Hospital.takeInput(opd);
 //					isContinue = true;
 //					
 //					isContinue = true;
 //					
 //				}else if (input == 3) {
-//					Department opd = Depart._Pharmacy.getDetp();//DepartmentFactory.getDepartmentInstance("Pharmacy");
+//					Department opd = DepartmentFactory.getDepartmentInstance("Pharmacy");
 //					Hospital.takeInput(opd);
 //					isContinue = true;
 //					
 //					isContinue = true;
 //					
 //				}else if(input == 4) {
-//					Department opd =  Depart._Paramedical.getDetp(); //DepartmentFactory.getDepartmentInstance("Paramedical");
+//					Department opd =  DepartmentFactory.getDepartmentInstance("Paramedical");
 //					Hospital.takeInput(opd);
 //					isContinue = true;
 //				}else {

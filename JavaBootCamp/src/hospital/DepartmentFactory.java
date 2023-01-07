@@ -4,7 +4,7 @@ public class DepartmentFactory {
 	
 	public static Department getDepartmentInstance(Depart d) {
 		
-		d._OPD.getDetp();
+		//d._OPD.getDetp();
 		
 //		if(departName.equals("OPD")) {
 //			return OPD.getInstance();
