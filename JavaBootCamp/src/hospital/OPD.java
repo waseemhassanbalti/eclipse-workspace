@@ -22,12 +22,12 @@ public class OPD extends Department{
 
 	@Override
 	public void displayDepartment() {
-		System.out.println("---------- Department Details --------------");
+		System.out.println("\n---------- Department Details --------------");
 		System.out.println("Department Name : "+ this.name);
 		System.out.println("Department Timing : "+ this.timings);
 		System.out.println("Department Doctor : "+ this.doctor);
 		System.out.println("Department FloorNumber : "+ this.floorNumber);
-		System.out.println("All Patient List of Department "+this.name);
+		System.out.println("\nAll Patient List of Department "+this.name);
 		this.patient.displayPatients();
 	}
 }

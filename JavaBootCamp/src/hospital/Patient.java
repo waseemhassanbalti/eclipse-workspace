@@ -46,7 +46,6 @@ public class Patient {
 				System.out.println("Invalid input");
 			}
 		}
-		scan.close();
 		return patients;
 	}
 	
