@@ -25,31 +25,24 @@ public class Task1 {
 			Character key = entry.getKey();
 			Integer val = entry.getValue();
 			if(val==1)
-			System.out.println(key);
+			System.out.print(key+" ");
 			
 		}
 		
+		
 		HashSet<Character> strMap = new HashSet();
-
+		HashSet<Character> onceOuccurenceMap = new HashSet();
 
 		for(int i = 0; i<str.length(); i++) {
 			
 			if(!strMap.add(str.charAt(i))) {
-				strMap.remove(str.charAt(i));
+				onceOuccurenceMap.remove(str.charAt(i));
+			}else {
+				onceOuccurenceMap.add(str.charAt(i));
 			}
 		}
 		
-		for (Map.Entry<Character, Integer> entry : map.entrySet()) {
-			Character key = entry.getKey();
-			Integer val = entry.getValue();
-			if(val==1)
-			System.out.println(key);
-			
-		}
-		
-		ArrayList<ArrayList<Character>> strList = new ArrayList();
-		
-		
+		System.out.println("\n"+onceOuccurenceMap);
 	}
 
 }
