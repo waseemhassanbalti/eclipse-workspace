@@ -107,7 +107,7 @@ public class LinkedList {
 		 }else {
 			 secondNode.next = secondNode.next.next;
 		 }
-		
+		 size--;
 		 return list;
 	 }
 	 
@@ -118,7 +118,7 @@ public class LinkedList {
 		 }else {
 			 list.head = list.head.next;
 		 }
-		
+		 size--;
 		 return list;
 	 }
 	 
@@ -133,6 +133,7 @@ public class LinkedList {
 		 while(fast.next != null) {
 			 if(fast.next.next == null) {
 				 slow.next = slow.next.next;
+				 size--;
 				 break;
 			 }
 			 fast = fast.next;
@@ -156,7 +157,7 @@ public class LinkedList {
 			 }else {
 				 list.head = list.head.next;
 			 }
-			 
+			 size--;
 			 return list;
 		 }
 		 
@@ -170,7 +171,7 @@ public class LinkedList {
 		 }else {
 			 currNode.next = currNode.next.next;
 		 }
-		
+		 size--;
 		 return list;
 		 
 	 }
@@ -186,7 +187,7 @@ public class LinkedList {
 			 }else {
 				 list.head = list.head.next;
 			 }
-			 
+			 size--;
 			 return list;
 		 }
 		 
@@ -199,6 +200,7 @@ public class LinkedList {
 		 while(fast.next != null) {
 			 if(fast.next.next == null) {
 				 slow.next = slow.next.next;
+				 size--;
 				 break;
 			 }
 			 fast = fast.next;
